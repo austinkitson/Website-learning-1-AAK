@@ -1,24 +1,25 @@
 var gulp = require("gulp");
 var sass = require("gulp-sass");
-var browserSync = require("browser-sync").create();
+var browserSync = require("browser-sync");
 
-gulp.task("styles", function() {
-  gulp
+gulp.task("sass", function() {
+  return gulp
     .src("sass/**/*.scss")
     .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest("./css/"));
+    .pipe(gulp.dest("./css/"))
+    .pipe(browserSync.reload({ stream: true }));
 });
 
-// Static server
-gulp.task("browser-sync", function() {
-  browserSync.init({
-    server: {
-      baseDir: "./"
-    }
-  });
-});
+// watch Sass files for changes, run the Sass preprocessor with the 'sass' task and reload
+gulp.task(
+  "serve",
+  gulp.series("sass", function() {
+    browserSync({
+      server: {
+        baseDir: "./"
+      }
+    });
 
-//Watch task
-gulp.task("default", function() {
-  gulp.watch("sass/**/*.scss", gulp.series("styles"));
-});
+    gulp.watch("sass/**/*.scss", gulp.series("sass"));
+  })
+);
