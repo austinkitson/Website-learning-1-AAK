@@ -4,15 +4,16 @@ body {
 
 section {
   text-align: center;
-  background-image: url("https://images.unsplash.com/photo-1543954496-f56252e0c408?ixlib=rb-1.2.1&auto=format&fit=crop&w=988&q=80");
+  background-image: url("../images/bg-leaves.jpg");
   margin: 0;
   padding: 50px;
   background-size: cover;
   background-position: center center; }
   section h1 {
-    color: #000000;
     font-family: 'Charmonman', cursive;
-    font-weight: 700; }
+    font-weight: 700;
+    font-size: 50px;
+    color: #208a47; }
 
 main {
   color: red;
