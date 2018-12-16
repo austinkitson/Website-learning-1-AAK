@@ -23,7 +23,11 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  margin-top: 50px; }
+  margin-top: 50px;
+  flex-direction: column; }
+  @media only screen and (min-width: 768px) {
+    main {
+      flex-direction: row; } }
 
 .div-1, .div-2, .div-3 {
   margin: 10px; }
