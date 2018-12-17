@@ -1,34 +1,38 @@
 @import url("https://fonts.googleapis.com/css?family=Charmonman:700");
 body {
-  margin: 0; }
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 175%; }
 
 section {
   text-align: center;
-  background-image: url("https://images.unsplash.com/photo-1543954496-f56252e0c408?ixlib=rb-1.2.1&auto=format&fit=crop&w=988&q=80");
-  margin: 0;
+  background-image: url("../images/bg.jpg");
+  margin: 0%;
   padding: 50px;
   background-size: cover;
-  background-position: center center; }
+  background-position: center center;
+  color: #ffffff; }
   section h1 {
-    color: #000000;
-    font-family: 'Charmonman', cursive;
-    font-weight: 700; }
+    font-family: 'Charmonman',cursive;
+    font-weight: 700;
+    font-size: 50px;
+    color: #d0e8c7; }
 
 main {
-  color: red;
-  border: 1px solid red;
+  color: #4a4a4a;
   position: relative;
-  width: 400px;
-  margin: 0 auto; }
+  max-width: 1200px;
+  margin: 0% auto;
+  display: flex;
+  margin-top: 50px;
+  flex-direction: column; }
+  main.reverse {
+    flex-direction: column-reverse; }
+  @media only screen and (min-width: 768px) {
+    main {
+      flex-direction: row; }
+      main.reverse {
+        flex-direction: row-reverse; } }
 
-.div-1, .div-2 {
-  border: 1px solid aqua;
-  margin: 10px;
-  float: left; }
-
-.div-3 {
-  border: 1px solid aqua;
-  clear: both;
-  width: 100px;
-  margin: 0 auto;
-  text-align: center; }
+.div-1, .div-2, .div-3 {
+  margin: 10px; }
